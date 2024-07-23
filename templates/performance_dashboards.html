@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<title>Performance Dashboards</title>
+</head>
+<body>
+<div class="container">
+<h1>Performance Dashboards</h1>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>FSR Name</th>
+<th>Revenue</th>
+<th>Bookings</th>
+<th>Conversion Rate</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+{% for performance_data in performance_data %}
+<tr>
+<td>{{ performance_data.fsr_name }}</td>
+<td>{{ performance_data.metrics.revenue }}</td>
+<td>{{ performance_data.metrics.bookings }}</td>
+<td>{{ performance_data.metrics.conversion_rate }}</td>
+<td>{{ performance_data.details }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
